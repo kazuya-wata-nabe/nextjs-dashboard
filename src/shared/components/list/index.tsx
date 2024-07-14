@@ -1,8 +1,3 @@
-import styled from "styled-components"
-
 export const ComboBox = () => {
-  return <Ul></Ul>
+  return <ul></ul>
 }
-
-export const Ul = styled.ul``
-export const Li = styled.li``

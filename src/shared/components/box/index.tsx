@@ -1,19 +1,30 @@
-"use client"
-
 import { PropsWithChildren } from "react"
-import styled from "styled-components"
+import { toClassName } from "@/shared/lib/class-name-converter"
+import styles from "./styles.module.css"
 
-type Props = PropsWithChildren
+type Props = PropsWithChildren<{
+  className?: string
+  gap?: 8 | 16 | 24 | 32 | 64
+}>
 
-export const FlexRow = ({ children }: Props) => {
-  return <Flex direction={"row"}>{children}</Flex>
+export const GridContainer = () => {}
+
+export const FlexRow = ({ gap, children, ...props }: Props) => {
+  const className = toClassName({
+    [props.className ?? ""]: !!props.className,
+    [styles.flexCol]: true,
+    [styles[`gap${gap ?? 8}`]]: !!gap,
+  })
+
+  return <div className={className}>{children}</div>
 }
 
-export const FlexCol = ({ children }: Props) => {
-  return <Flex direction={"column"}>{children}</Flex>
-}
+export const FlexCol = ({ gap, children, ...props }: Props) => {
+  const className = toClassName({
+    [props.className ?? ""]: !!props.className,
+    [styles.flexCol]: true,
+    [styles[`gap${gap ?? 8}`]]: !!gap,
+  })
 
-const Flex = styled.div<{ direction: "row" | "column" }>`
-  display: flex;
-  flex-direction: ${({ direction }) => direction};
-`
+  return <div className={className}>{children}</div>
+}

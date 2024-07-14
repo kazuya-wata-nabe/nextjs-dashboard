@@ -1,0 +1,26 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.textField {
+  display: flex;
+  flex-direction: column;
+
+  &>input {
+    height: 32px;
+  }
+}
+
+.small {
+  width: 100px;
+}
+
+.medium {
+  width: 200px;
+}
+
+.large {
+  width: 300px;
+}

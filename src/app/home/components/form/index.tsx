@@ -2,7 +2,7 @@
 
 import { FormEvent, useCallback } from "react"
 import { SubmitButton } from "@/shared/components/button"
-import { Input } from "@/shared/components/form"
+import { TextField } from "@/shared/components/form"
 
 export const RegisterForm = () => {
   const onSubmit = useCallback((event: FormEvent) => {
@@ -12,7 +12,7 @@ export const RegisterForm = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <Input></Input>
+      <TextField label="hoge" />
       <SubmitButton size="small">push me</SubmitButton>
     </form>
   )

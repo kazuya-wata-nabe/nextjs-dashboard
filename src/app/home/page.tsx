@@ -1,13 +1,16 @@
 import { FlexCol } from "@/shared/components/box"
-import { RegisterForm } from "./components/form"
+import { SubmitButton } from "@/shared/components/button"
+import { FormContainer, TextField } from "@/shared/components/form"
 
 const Home = () => {
   return (
-    <main>
-      <FlexCol>foo</FlexCol>
-      <FlexCol>bar</FlexCol>
-      <RegisterForm></RegisterForm>
-    </main>
+    <FlexCol gap={8}>
+      <div style={{ height: "100px" }}></div>
+      <FormContainer>
+        <TextField label="hoge"></TextField>
+        <SubmitButton size="small">submit</SubmitButton>
+      </FormContainer>
+    </FlexCol>
   )
 }
 

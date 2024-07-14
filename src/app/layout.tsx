@@ -1,7 +1,6 @@
 import { ReactNode } from "react"
 import type { Metadata } from "next"
 import { Noto_Sans_JP } from "next/font/google"
-import StyledComponentsRegistry from "@/shared/lib/styled-components-registry"
 import "./assets/globals.css"
 
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] })
@@ -15,7 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ja">
       <body className={notoSansJP.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <main>{children}</main>
       </body>
     </html>
   )

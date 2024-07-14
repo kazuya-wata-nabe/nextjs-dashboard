@@ -1,0 +1,1 @@
+{"version":3,"sources":["./styles.module.css"],"names":["flexRow","flexCol","gap8","gap16","gap24","gap32","gap64"],"mappings":"AAAA;AAAA,E,aAAAA,S,WAAA;AAAA,E,aAKAC,S,WALA;AAAA,E,aAUAC,M,WAVA;AAAA,E,aAcAC,O,WAdA;AAAA,E,aAkBAC,O,WAlBA;AAAA,E,aAsBAC,O,WAtBA;AAAA,E,aA0BAC,O,WA1BA;AAAA;AAAA","file":"styles.module.css.d.ts","sourceRoot":""}
