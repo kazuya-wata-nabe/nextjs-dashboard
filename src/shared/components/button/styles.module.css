@@ -1,3 +1,10 @@
+.button {
+  cursor: pointer;
+  border-radius: 4px;
+  height: 40px;
+  background: #ffffff;
+}
+
 .small {
   width: 100px;
 }
