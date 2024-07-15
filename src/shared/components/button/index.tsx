@@ -1,6 +1,6 @@
 "use client"
 
-import { KeyboardEvent, useCallback } from "react"
+import { KeyboardEvent, useCallback, useRef } from "react"
 import { toClassName } from "@/shared/lib/class-name-converter"
 import styles from "./styles.module.css"
 
@@ -34,6 +34,7 @@ export const SubmitButtonA = ({ size, children }: Props) => {
 }
 
 export const SubmitButtonDiv = ({ size, children }: Props) => {
+  const element = useRef<HTMLInputElement>(null)
   const className = toClassName({
     [styles[size]]: true,
     [styles.button]: true,
@@ -43,7 +44,7 @@ export const SubmitButtonDiv = ({ size, children }: Props) => {
   const onKeyDown = useCallback((event: KeyboardEvent) => {
     const codes = ["Enter", "Space"]
     if (codes.includes(event.code)) {
-      console.debug(1)
+      element.current?.click()
     }
   }, [])
 
@@ -52,9 +53,10 @@ export const SubmitButtonDiv = ({ size, children }: Props) => {
       role="button"
       tabIndex={0}
       className={className}
-      onClick={() => console.debug(1)}
+      onClick={() => element.current?.click()}
       onKeyDown={onKeyDown}
     >
+      <input hidden type="submit" ref={element} />
       {children}
     </div>
   )
