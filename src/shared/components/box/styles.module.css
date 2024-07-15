@@ -8,6 +8,10 @@
   flex-direction: column;
 }
 
+.grid {
+  display: grid;
+}
+
 .gap8 {
   gap: 8px;
 }

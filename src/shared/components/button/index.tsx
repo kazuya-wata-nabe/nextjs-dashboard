@@ -1,8 +1,11 @@
+"use client"
+
+import { KeyboardEvent, useCallback } from "react"
 import { toClassName } from "@/shared/lib/class-name-converter"
 import styles from "./styles.module.css"
 
 type Props = {
-  size: "small" | "medium" | "large"
+  size: "small" | "medium" | "large" | "full"
   children: string
 }
 
@@ -16,6 +19,44 @@ export const SubmitButton = ({ size, children }: Props) => {
     <button type="submit" className={className}>
       {children}
     </button>
+  )
+}
+
+export const SubmitButtonA = ({ size, children }: Props) => {
+  const className = toClassName({
+    [styles[size]]: true,
+    [styles.button]: true,
+    [styles.a]: true,
+  })
+
+  // eslint-disable-next-line jsx-a11y/anchor-is-valid
+  return <a className={className}>{children}</a>
+}
+
+export const SubmitButtonDiv = ({ size, children }: Props) => {
+  const className = toClassName({
+    [styles[size]]: true,
+    [styles.button]: true,
+    [styles.div]: true,
+  })
+
+  const onKeyDown = useCallback((event: KeyboardEvent) => {
+    const codes = ["Enter", "Space"]
+    if (codes.includes(event.code)) {
+      console.debug(1)
+    }
+  }, [])
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      className={className}
+      onClick={() => console.debug(1)}
+      onKeyDown={onKeyDown}
+    >
+      {children}
+    </div>
   )
 }
 

@@ -28,3 +28,7 @@ export const FlexCol = ({ gap, children, ...props }: Props) => {
 
   return <div className={className}>{children}</div>
 }
+
+export const GridBox = ({ children }: PropsWithChildren) => {
+  return <div className={styles.grid}>{children}</div>
+}

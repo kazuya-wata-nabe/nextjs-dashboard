@@ -4,11 +4,11 @@ import { FormContainer, TextField } from "@/shared/components/form"
 
 const Home = () => {
   return (
-    <FlexCol gap={8}>
-      <div style={{ height: "100px" }}></div>
+    <FlexCol gap={32}>
+      <h1>登録フォーム</h1>
       <FormContainer>
-        <TextField label="hoge"></TextField>
-        <SubmitButton size="small">submit</SubmitButton>
+        <TextField label="名前" name="name"></TextField>
+        <SubmitButton size="full">登録</SubmitButton>
       </FormContainer>
     </FlexCol>
   )

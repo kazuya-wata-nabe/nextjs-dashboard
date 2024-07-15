@@ -1,7 +1,7 @@
 .formContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .textField {
@@ -10,6 +10,7 @@
 
   &>input {
     height: 32px;
+    padding: 0 3px;
   }
 }
 

@@ -8,9 +8,14 @@ type Props = {
 }
 
 export const FormContainer = ({ children }: Props) => {
-  const onSubmit = useCallback((event: FormEvent) => {
+  const onSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.debug("1")
+    const formData = new FormData(event.currentTarget)
+    const entries = new Array<string>()
+    for (const [, v] of formData.entries()) {
+      entries.push(`${v}`)
+    }
+    alert(entries)
   }, [])
 
   return (
