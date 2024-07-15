@@ -12,6 +12,10 @@
     height: 32px;
     padding: 0 3px;
   }
+
+  /* &>input::placeholder {
+    color: black;
+  } */
 }
 
 .small {
