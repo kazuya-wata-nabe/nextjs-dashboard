@@ -62,7 +62,7 @@ export const SubmitButtonDiv = ({ size, children }: Props) => {
   )
 }
 
-export const ClickButton = ({ size, children, onClick }: Props & { onClick: () => void }) => {
+export const Button = ({ size, children, onClick }: Props & { onClick: () => void }) => {
   const className = toClassName({
     [styles[size]]: true,
     [styles.button]: true,

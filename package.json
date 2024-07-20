@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "dev": "next dev -p 5173 & pnpm hcm --watch",
+    "dev": "next dev -p 5173 & pnpm hcm:watch",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "hcm": "hcm src/**/*.module.css",
+    "hcm:watch": "pnpm hcm --watch",
     "storybook": "storybook dev -p 6006",
+    "storybook:hcm": "storybook dev -p 6006 & pnpm hcm:watch",
     "build-storybook": "storybook build"
   },
   "dependencies": {

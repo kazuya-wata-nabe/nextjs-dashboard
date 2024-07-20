@@ -29,3 +29,10 @@
 .large {
   width: 300px;
 }
+
+.required {
+  color: red;
+  border: solid 1px;
+  padding: 1px;
+  margin-left: 2px;
+}

@@ -8,7 +8,8 @@ const Home = () => {
     <FlexCol gap={32}>
       <h1>登録フォーム</h1>
       <FormContainer>
-        <TextField label="名前" name="name"></TextField>
+        <TextField label="名前" name="name" required></TextField>
+        <TextField label="名前" name="name" required></TextField>
         <SubmitButton size="full">登録</SubmitButton>
         {/* <SubmitButtonDiv size="full">登録</SubmitButtonDiv> */}
       </FormContainer>
