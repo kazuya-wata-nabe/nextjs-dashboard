@@ -13,13 +13,14 @@
 
 
 .container {
-  position: relative;
-  top: 50%;
-  margin: auto;
-  width: 300px;
   display: flex;
   flex-direction: column;
   place-content: center;
   place-items: center;
+  padding: 10px;
+  position: relative;
+  top: 50%;
+  margin: auto;
+  width: 300px;
   background-color: white;
 }

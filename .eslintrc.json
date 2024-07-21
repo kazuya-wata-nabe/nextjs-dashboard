@@ -22,7 +22,9 @@
       {
         "allowList": {
           "Props": true,
-          "props": true
+          "props": true,
+          "prev": true,
+          "ref": true
         }
       }
     ]
