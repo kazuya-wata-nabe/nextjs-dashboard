@@ -101,15 +101,15 @@ export const SelectBox = ({ label, size, options }: Props) => {
 
   return (
     <div className={toClassName([styles.selectBox, styles[size]])}>
-      <div id={labelId}>{label}</div>
+      <label id={labelId}>{label}</label>
       <div
         role="combobox"
         tabIndex={0}
         className={toClassName([styles.comboBox, styles.ellipsis])}
         aria-expanded={state.isOpen}
         aria-haspopup="listbox"
-        aria-activedescendant={activeDescendant}
-        aria-controls={listBoxId}
+        aria-labelledby={labelId}
+        aria-controls={activeDescendant}
         onClick={toggle}
         onBlur={() => {}}
         onKeyDown={handleKeyDownInComboBox}
@@ -118,9 +118,9 @@ export const SelectBox = ({ label, size, options }: Props) => {
       </div>
       <ul
         role="listbox"
+        id={listBoxId}
         className={listBoxClassName}
         tabIndex={-1}
-        aria-labelledby={id}
         aria-expanded={state.isOpen}
         aria-hidden={!state.isOpen}
       >

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react"
+import { expect, within } from "@storybook/test"
 import { SelectBox } from "./select-box"
 
 const meta = {
@@ -9,18 +10,25 @@ const meta = {
   args: {
     label: "sample",
     size: "medium",
+    options: [
+      { label: "りんご", value: "apple" },
+      { label: "ばなな", value: "banana" },
+      { label: "ぶどう", value: "grape" },
+    ],
   },
 } satisfies Meta<typeof SelectBox>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
-  args: {
-    options: [
-      { label: "りんご", value: "apple" },
-      { label: "ばなな", value: "banana" },
-      { label: "ぶどう", value: "grape" },
-    ],
+export const Primary: Story = {}
+
+export const OnClick: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const selectBox = await canvas.findByRole("combobox", { name: "sample" })
+
+    expect(selectBox).toBeInTheDocument()
   },
 }
