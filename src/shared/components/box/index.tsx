@@ -32,3 +32,12 @@ export const FlexCol = ({ gap, children, ...props }: Props) => {
 export const GridBox = ({ children }: PropsWithChildren) => {
   return <div className={styles.grid}>{children}</div>
 }
+
+type SpaceBoxProps = {
+  width?: string
+  height?: string
+}
+
+export const SpaceBox = ({ height, width, children }: PropsWithChildren<SpaceBoxProps>) => {
+  return <div style={{ height, width }}>{children}</div>
+}

@@ -9,14 +9,14 @@ type Props = {
   name?: string
 }
 
-export const TextField = ({ name, label }: Props) => {
+export const TextField = ({ name, required, label }: Props) => {
   const id = useId()
 
   return (
     <div className={styles.textField}>
       <label htmlFor={id}>
         {label}
-        <span className={styles.required}>必須</span>
+        {required && <span className={styles.required}>必須</span>}
       </label>
       <input id={id} name={name} />
     </div>

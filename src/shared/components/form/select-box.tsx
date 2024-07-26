@@ -49,7 +49,10 @@ export const SelectBox = ({ label, size, options }: Props) => {
     setState((prev) => update(prev, { isOpen: !prev.isOpen }))
   }, [])
 
-  const updateOption = useCallback((option: Option) => setState((prev) => update(prev, option)), [])
+  const updateOption = useCallback(
+    (option: Option) => setState((prev) => update(prev, { ...option, isOpen: false })),
+    [],
+  )
 
   const handleKeyDownInComboBox = useCallback(
     (event: KeyboardEvent<HTMLDivElement>) => {
