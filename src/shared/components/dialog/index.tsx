@@ -13,6 +13,7 @@ const focusableElementsSelector =
 
 export const InformationDialog = ({ open, onClose }: Props) => {
   const ref = useRef<HTMLDivElement>(null)
+  const backup = useRef<HTMLElement | null>(null)
 
   const className = useMemo(
     () =>
@@ -59,6 +60,10 @@ export const InformationDialog = ({ open, onClose }: Props) => {
   )
 
   useEffect(() => {
+    if (document.activeElement instanceof HTMLElement) {
+      backup.current = document.activeElement
+    }
+
     const target = ref.current
     target?.addEventListener("keydown", handleKeyDownTab)
     target?.addEventListener("keydown", handleKeyDownEscape)
@@ -73,6 +78,7 @@ export const InformationDialog = ({ open, onClose }: Props) => {
     return () => {
       target?.removeEventListener("keydown", handleKeyDownTab)
       target?.removeEventListener("keydown", handleKeyDownEscape)
+      backup.current?.focus()
     }
   }, [handleKeyDownEscape, handleKeyDownTab, open])
 

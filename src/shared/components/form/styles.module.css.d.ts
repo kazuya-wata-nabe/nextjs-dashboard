@@ -3,6 +3,8 @@ declare const styles:
   & Readonly<{ "textField": string }>
   & Readonly<{ "selectBox": string }>
   & Readonly<{ "comboBox": string }>
+  & Readonly<{ "label": string }>
+  & Readonly<{ "arrow": string }>
   & Readonly<{ "ellipsis": string }>
   & Readonly<{ "listBox": string }>
   & Readonly<{ "hidden": string }>

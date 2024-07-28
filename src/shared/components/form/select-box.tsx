@@ -114,7 +114,8 @@ export const SelectBox = ({ label, size, options }: Props) => {
         onBlur={() => {}}
         onKeyDown={handleKeyDownInComboBox}
       >
-        <div>{state.label}</div>
+        <div className={toClassName([styles.label, styles.ellipsis])}>{state.label}</div>
+        <div className={styles.arrow}>▼</div>
       </div>
       <ul
         role="listbox"

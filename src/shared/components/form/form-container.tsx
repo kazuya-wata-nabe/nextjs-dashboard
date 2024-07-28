@@ -15,7 +15,10 @@ export const FormContainer = ({ children }: Props) => {
     for (const [, v] of formData.entries()) {
       entries.push(`${v}`)
     }
-    alert(entries)
+
+    if (entries.every((entry) => entry !== "")) {
+      alert(entries)
+    }
   }, [])
 
   return (
