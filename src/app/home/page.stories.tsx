@@ -18,7 +18,8 @@ export const ValidInput: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
-    const input = canvas.getByRole("textbox", { name: "名前" })
+    // const input = canvas.getByRole("textbox", { name: "名前必須" })
+    const input = canvas.getByRole("textbox", { name: /名前/ })
     const button = canvas.getByRole("button", { name: "登録" })
 
     await userEvent.type(input, "foo")

@@ -18,7 +18,7 @@ export const TextField = ({ name, required, label }: Props) => {
         {label}
         {required && <span className={styles.required}>必須</span>}
       </label>
-      <input id={id} name={name} />
+      <input id={id} name={name} required={required} />
     </div>
   )
 }
