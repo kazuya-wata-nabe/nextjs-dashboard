@@ -12,7 +12,8 @@
     "hcm:watch": "pnpm hcm --watch",
     "storybook": "storybook dev -p 6006",
     "storybook:hcm": "storybook dev -p 6006 & pnpm hcm:watch",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "vitest"
   },
   "dependencies": {
     "next": "14.2.5",
@@ -29,10 +30,12 @@
     "@storybook/nextjs": "^8.2.2",
     "@storybook/react": "^8.2.2",
     "@storybook/test": "^8.2.2",
+    "@testing-library/react": "^16.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "eslint-plugin-jsx-a11y": "^6.9.0",
@@ -41,12 +44,14 @@
     "eslint-plugin-unicorn": "^53.0.0",
     "happy-css-modules": "^3.1.1",
     "husky": "^9.0.11",
+    "jsdom": "^24.1.1",
     "lint-staged": "^15.2.4",
     "postcss": "^8.4.39",
     "prettier": "^3.2.5",
     "storybook": "^8.2.2",
     "typescript": "^5",
-    "typescript-eslint": "^7.14.1"
+    "typescript-eslint": "^7.14.1",
+    "vitest": "^2.0.4"
   },
   "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
 }
